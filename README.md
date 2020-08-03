@@ -13,7 +13,7 @@ Gives a list of all permission informations
 ```csharp
 var utcTime = TimezoneHelper.GivenLocalTimeToUTC('2020-08-03 12:37:21.603', 'Asia/Calcuta');
 ```
-## TimeZone A To Another TimeZone B
+## TimeZone A To TimeZone B
 Gives a list of all permission informations
 ```csharp
 var pacaficTime = TimezoneHelper.MigrateTimezone('2020-08-03 12:37:21.603', 'Asia/Calcuta', 'Asia/Pacific');
