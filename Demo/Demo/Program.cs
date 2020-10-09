@@ -13,7 +13,7 @@ namespace Demo
             Console.WriteLine(datetime);
             Console.WriteLine();
 
-            Console.WriteLine("1. Current Regional Time (Eg: Asia/Calcutta): " + ExpressTimeZone.CurrentRegionalTime("Asia/Calcutta"));
+            Console.WriteLine("1. Current Regional Time (Eg: Asia/Kolkata): " + ExpressTimeZone.CurrentRegionalTime("Asia/Kolkata"));
             Console.WriteLine("2. UTC => System Time Zone: " + datetime.UTCToSystemTime());
             Console.WriteLine("3. UTC => Regional Time (Eg: Asia/Calcutta): " + datetime.UTCToRegionalTime("Asia/Calcutta"));            
             Console.WriteLine("4. Regional Time (Eg: Asia/Calcutta) => UTC: " + DateTime.Now.RegionalTimeToUTC("Asia/Calcutta"));
