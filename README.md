@@ -20,23 +20,59 @@ Install-Package Twileloop.ExpressTimezone -Version 1.0.0
 This repo maintains 2 projects. The main library and a demo project that implements it
 
 ## Basic DateTime scnerios
-### Basic DateTime scnerios
-C# POCO Model building.
-The model should be decorated with Dapper.Contrib attributes for proper working. Here is an example
-```csharp
-using Dapper.Contrib.Extensions;
+* Assume server timezone is "Asia/Calcutta" for these examples
 
-namespace Demo
+### Getting TimeZone from a Client's Browser (JavaScript)
+If you need to retrive timezone from a client's browser, You can use this
+```javascript
+var timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+```
+
+### UTC => System Time Zone
+Converts UTC time to System default timezone
+```csharp
+var datetime = DateTime.UtcNow;
+datetime.UTCToSystemTime()
+```
+
+### UTC => Regional Time
+Convert UTC time to a regional time
+```csharp
+var datetime = DateTime.UtcNow;
+datetime.UTCToRegionalTime("Asia/Calcutta")
+```
+
+### Regional Time => UTC
+This example system timezone to UTC
+```csharp
+var datetime = DateTime.Now;
+datetime.RegionalTimeToUTC("Asia/Calcutta")
+```
+
+### Regional Time => Regional Time
+Converts time from one timezone to another
+```csharp
+var datetime = DateTime.Now;
+datetime.MigrateTimezone("Asia/Calcutta", "America/Chihuahua")
+```
+
+### List of all timezones
+Gets a list of all timezones available on NodaTime
+```csharp
+var timezones = ExpressTimeZone.AllTimezones();
+foreach(var timezone in timezones)
 {
-    [Table("tblUser")]
-    public class tblUser
-    {
-        [Key]
-        public int Id { get; set; }
-        public string FName { get; set; }
-        public string LName { get; set; }
-        [Computed]
-        public string Fullname { get; set; }
-    }
+    Console.WriteLine(timezone);
+}
+```
+
+### List of all timezones
+Get a list of timezones falls under specific UTC offset
+```csharp
+//+5:30 is 330 mins
+var tzs = ExpressTimeZone.OffsetToTimezones(330);
+foreach (var tz in tzs))
+{
+    Console.WriteLine(tz.DisplayName);
 }
 ```
