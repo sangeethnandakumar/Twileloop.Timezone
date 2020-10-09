@@ -1,6 +1,6 @@
 # Express.TimeZone
 
-EXpress Timezone library is basicaly a wrapper around popular .NET DateTime framework Noda Time. Github (https://github.com/nodatime/nodatime)
+Express Timezone library is a simple wrapper around popular .NET DateTime framework Noda Time. Github (https://github.com/nodatime/nodatime)
 
 ExpressTimezone exposes extension methords that are easy to use and on the point APIs and performs operations with NodaTime. This will make major stuff with dateTime convertion much easier indirectly using NodaTime
 
