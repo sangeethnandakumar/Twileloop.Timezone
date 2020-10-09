@@ -1,42 +1,82 @@
-## Given - UTC To LocalTime()
-Gives a list of all permission informations
-```csharp
-var indianTime = TimezoneHelper.GivenUTCToLocalTime('2020-08-03 12:37:21.603', 'Asia/Calcuta');
+# Express.TimeZone
+
+Express Timezone library is a simple wrapper around popular .NET DateTime framework Noda Time. Github (https://github.com/nodatime/nodatime)
+
+ExpressTimezone exposes extension methords that are easy to use and on the point. Internaly it performs operations with NodaTime. This will make major stuff with DateTime convertion much easier without going deeper into the amazing work of NodaTime
+
+The library exposes easy to use API for all kind of practical DateTime use cases,
+
+Assuming that you have a server running under a specific timezone and clients connecting to it from multiple timezones, And you need to manage incomming and outgoing timezones easily. Like saving UTC in database and displaying on client's timezone on there browser. Or client selecting a time in their timezone and you need to convert it to UTC , Or even you need to migrate a time from one timezone to another. Likewise...
+
+I created this wrapper library just because NodaTime is a little bit hard to kikstart.
+
+![alt text](https://d585tldpucybw.cloudfront.net/sfimages/default-source/productsimages/justmock/justmock__net_770.png?sfvrsn=b4522579_1)
+
+### Package Manager
+The library is available free on NuGet
+https://www.nuget.org/packages/Twileloop.ExpressData
+
+```nuget
+Install-Package Twileloop.ExpressTimezone -Version 1.0.0
 ```
-## Current - UTC To LocalTime()
-Gives a list of all permission informations
-```csharp
-var indianTime = TimezoneHelper.CurrentUTCToLocalTime('Asia/Calcuta');
+
+### Repository Contents
+This repo maintains 2 projects. The main library and a demo project that implements it
+
+## Basic DateTime scnerios
+* Assume server timezone is "Asia/Calcutta" for these examples
+
+### Getting TimeZone from a Client's Browser (JavaScript)
+If you need to retrive timezone from a client's browser, You can use this
+```javascript
+var timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 ```
-## Given - LocalTime To UTC()
-Gives a list of all permission informations
+
+### UTC => System Time Zone
+Converts UTC time to System default timezone
 ```csharp
-var utcTime = TimezoneHelper.GivenLocalTimeToUTC('2020-08-03 12:37:21.603', 'Asia/Calcuta');
+var datetime = DateTime.UtcNow;
+datetime.UTCToSystemTime()
 ```
-## TimeZone A To TimeZone B
-Gives a list of all permission informations
+
+### UTC => Regional Time
+Convert UTC time to a regional time
 ```csharp
-var pacaficTime = TimezoneHelper.MigrateTimezone('2020-08-03 12:37:21.603', 'Asia/Calcuta', 'Asia/Pacific');
+var datetime = DateTime.UtcNow;
+datetime.UTCToRegionalTime("Asia/Calcutta")
 ```
-## GetTimezoneOffset()
-Gives a list of all permission informations
+
+### Regional Time => UTC
+This example system timezone to UTC
 ```csharp
-var fiveAndHalfHours = TimezoneHelper.GetTimezoneOffset('Asia/Calcuta').Notation();
+var datetime = DateTime.Now;
+datetime.RegionalTimeToUTC("Asia/Calcutta")
 ```
-## GetAllTimezones()
-Gives a list of all permission informations
+
+### Regional Time => Regional Time
+Converts time from one timezone to another
 ```csharp
-var allTimeZones = TimezoneHelper.GetAllTimezones();
+var datetime = DateTime.Now;
+datetime.MigrateTimezone("Asia/Calcutta", "America/Chihuahua")
 ```
-## DoesTimeZoneSupported
-Gives a list of all permission informations
+
+### List of all timezones
+Gets a list of all timezones available on NodaTime
 ```csharp
-var allTimeZones = TimezoneHelper.DoesSupport('Asia/Calcuta');
+var timezones = ExpressTimeZone.AllTimezones();
+foreach(var timezone in timezones)
+{
+    Console.WriteLine(timezone);
+}
 ```
----
-# EXTENSION METHORDS
-## ToISO233
-Gives a list of all permission informations
+
+### List of all timezones
+Get a list of timezones falls under specific UTC offset
 ```csharp
-var allTimeZones = DateTime.UTCNow.ToISO233();
+//+5:30 is 330 mins
+var tzs = ExpressTimeZone.OffsetToTimezones(330);
+foreach (var tz in tzs))
+{
+    Console.WriteLine(tz.DisplayName);
+}
 ```
