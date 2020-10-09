@@ -2,9 +2,13 @@
 
 Express Timezone library is a simple wrapper around popular .NET DateTime framework Noda Time. Github (https://github.com/nodatime/nodatime)
 
-ExpressTimezone exposes extension methords that are easy to use and on the point APIs and performs operations with NodaTime. This will make major stuff with dateTime convertion much easier indirectly using NodaTime
+ExpressTimezone exposes extension methords that are easy to use and on the point. Internaly it performs operations with NodaTime. This will make major stuff with DateTime convertion much easier without going deeper into the amazing work of NodaTime
 
-The library exposes easy to use API for all kind of practical DateTime conversions, Keeping in mind that you have a server on a specific timezone and clients connecting to it from multiple timezones
+The library exposes easy to use API for all kind of practical DateTime use cases,
+
+Assuming that you have a server running under a specific timezone and clients connecting to it from multiple timezones, And you need to manage incomming and outgoing timezones easily. Like saving UTC in database and displaying on client's timezone on there browser. Or client selecting a time in their timezone and you need to convert it to UTC , Or even you need to migrate a time from one timezone to another. Likewise...
+
+I created this wrapper library just because NodaTime is a little bit hard to kikstart.
 
 ![alt text](https://d585tldpucybw.cloudfront.net/sfimages/default-source/productsimages/justmock/justmock__net_770.png?sfvrsn=b4522579_1)
 
