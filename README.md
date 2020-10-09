@@ -14,7 +14,7 @@ I created this wrapper library just because NodaTime is a little bit hard to kik
 
 ### Package Manager
 The library is available free on NuGet
-https://www.nuget.org/packages/Twileloop.ExpressData
+https://www.nuget.org/packages/Twileloop.ExpressTimezone/
 
 ```nuget
 Install-Package Twileloop.ExpressTimezone -Version 1.0.0
