@@ -10,7 +10,7 @@ Assuming that you have a server running under a specific timezone and clients co
 
 I created this wrapper library just because NodaTime is a little bit hard to kikstart.
 
-![alt text](https://d585tldpucybw.cloudfront.net/sfimages/default-source/productsimages/justmock/justmock__net_770.png?sfvrsn=b4522579_1)
+![alt text](https://raw.githubusercontent.com/sangeethnandakumar/Express-Timezone-Library/master/ExpressTimezone/icon.png)
 
 ### Package Manager
 The library is available free on NuGet
