@@ -12,7 +12,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>timezone, time, nodatime, worldwide, globalization, utc, zone</PackageTags>
 		<Description>
-			Wrapper around popular NodaTime to simplify and effortlessly convert one timezones to and from another or UTC. Simplify worldwide time conversions, handle daylight savings, and enjoy seamless globalization.
+			An easy to use utility wrapper around NodaTime to easily convert timezones from any timezones, countries, offsets, short and long names etc.. while leveraging the powerfull NodaTime and globaliazation.
 		</Description>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
