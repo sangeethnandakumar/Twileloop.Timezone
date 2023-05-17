@@ -7,7 +7,7 @@ on:
       - 'v*'
 
 env:
-  PROJECT_PATH: './Twileloop.SpreadSheet/Twileloop.SpreadSheet.csproj'
+  PROJECT_PATH: './Twileloop.Timezone/Twileloop.Timezone.csproj'
   PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}/output
   NUGET_SOURCE_URL: 'https://api.nuget.org/v3/index.json'
 
