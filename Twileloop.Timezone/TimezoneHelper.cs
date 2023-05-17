@@ -160,5 +160,18 @@ namespace Twileloop.Timezone
             }
         }
 
+
+        public static List<(string CountryCode, string CountryName)> GetAllCountries()
+        {
+            var countries = CultureInfo.GetCultures(CultureTypes.SpecificCultures)
+                .Select(culture => new RegionInfo(culture.Name))
+                .GroupBy(region => region.Name)
+                .Select(group => group.First())
+                .Select(region => (region.TwoLetterISORegionName, region.EnglishName))
+                .ToList();
+
+            return countries;
+        }
+
     }
 }

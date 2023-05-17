@@ -9,11 +9,10 @@ namespace Twileloop.Timezone.Demo
             //System timezone 🡺 UTC timezone
             var utcTime = DateTime.UtcNow;
 
+
+
             //UTC timezone 🡺 System timezone
             var mySystemTime = utcTime.UtcToSystemTimezone();
-
-
-
 
             //UTC timezone 🡺 Custom timezone
             var japanTime = utcTime.UtcToCustomTimezone("Asia/Tokyo");
@@ -27,7 +26,7 @@ namespace Twileloop.Timezone.Demo
 
 
 
-            // Abbreviation 🡺 Timezone
+            // Timezone Abbreviation 🡺 Timezone Id
             var abbreviation = "IST";
             var (displayName, timeZoneIds) = TimezoneHelper.AbbreviationToTimezone(abbreviation);
             Console.WriteLine($"Abbreviation: {abbreviation}");
@@ -39,7 +38,7 @@ namespace Twileloop.Timezone.Demo
             }
 
 
-            // Timezone 🡺 Abbreviation
+            // Timezone Id 🡺 Timezone Abbreviation
             var timeZoneId = "Asia/Kolkata";
             var (zoneAbbreviation, zoneDisplayName) = TimezoneHelper.TimezoneToAbbreviation(timeZoneId);
             Console.WriteLine($"Time Zone Identifier: {timeZoneId}");
@@ -49,7 +48,7 @@ namespace Twileloop.Timezone.Demo
 
 
 
-            // Timezone 🡺 Countries
+            // Timezone Id 🡺 Country Code
             string timezone = "America/New_York";
             List<(string CountryCode, string CountryName)> countriesUnderTimezone  = TimezoneHelper.GetCountriesUnderTimezone(timezone);
             Console.WriteLine($"Countries under timezone '{timezone}':");
@@ -59,7 +58,7 @@ namespace Twileloop.Timezone.Demo
             }
 
 
-            // Country 🡺 Timezones
+            // Country Code 🡺 Timezones
             string countryCode = "US";
             List<string> timezones = TimezoneHelper.GetTimezonesUnderCountry(countryCode);
             Console.WriteLine($"Timezones under country '{countryCode}':");
@@ -69,12 +68,12 @@ namespace Twileloop.Timezone.Demo
             }
 
 
-            // Country Name 🡺 Two Letter ISO RegionName
+            // Country Name 🡺 Country Code
             string countryName = "United States";
             string isoCountryCode = TimezoneHelper.CountryNameToAbbreviation(countryName);
             Console.WriteLine($"Country name '{countryName}' has the abbreviation: {isoCountryCode}");
 
-            // Two Letter ISO RegionName 🡺 Country Name 
+            // Country Code 🡺 Country Name 
             string isoCode = "US";
             string fullCountryName = TimezoneHelper.AbbreviationToCountryName(isoCode);
             Console.WriteLine($"Abbreviation '{isoCode}' corresponds to the country: {fullCountryName}");
@@ -86,7 +85,12 @@ namespace Twileloop.Timezone.Demo
 
 
 
-
+            //Get all countries
+            List<(string CountryCode, string CountryName)> allCountries = TimezoneHelper.GetAllCountries();
+            allCountries.ForEach(country =>
+            {
+                Console.WriteLine($"{country.CountryCode} | {country.CountryName}");
+            });
 
             //Get all timezones
             var allTimezones = TimezoneHelper.GetAllTimezones();
