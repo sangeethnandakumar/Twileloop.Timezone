@@ -9,8 +9,6 @@ namespace Twileloop.Timezone.Demo
             //System timezone 🡺 UTC timezone
             var utcTime = DateTime.UtcNow;
 
-
-
             //UTC timezone 🡺 System timezone
             var mySystemTime = utcTime.UtcToSystemTimezone();
 
@@ -22,9 +20,6 @@ namespace Twileloop.Timezone.Demo
 
             //Custom timezone 🡺 Custom timezone
             var indianTime = japanTime.MigrateToTimezone("Asia/Tokyo", "Asia/Kolkata");
-
-
-
 
             // Timezone Abbreviation 🡺 Timezone Id
             var abbreviation = "IST";
@@ -44,8 +39,6 @@ namespace Twileloop.Timezone.Demo
             Console.WriteLine($"Time Zone Identifier: {timeZoneId}");
             Console.WriteLine($"Abbreviation: {zoneAbbreviation}");
             Console.WriteLine($"Full Display Name: {zoneDisplayName}");
-
-
 
 
             // Timezone Id 🡺 Country Code
@@ -73,16 +66,11 @@ namespace Twileloop.Timezone.Demo
             string isoCountryCode = TimezoneHelper.CountryNameToAbbreviation(countryName);
             Console.WriteLine($"Country name '{countryName}' has the abbreviation: {isoCountryCode}");
 
+
             // Country Code 🡺 Country Name 
             string isoCode = "US";
             string fullCountryName = TimezoneHelper.AbbreviationToCountryName(isoCode);
             Console.WriteLine($"Abbreviation '{isoCode}' corresponds to the country: {fullCountryName}");
-
-
-
-
-
-
 
 
             //Get all countries
@@ -92,12 +80,14 @@ namespace Twileloop.Timezone.Demo
                 Console.WriteLine($"{country.CountryCode} | {country.CountryName}");
             });
 
+
             //Get all timezones
             var allTimezones = TimezoneHelper.GetAllTimezones();
             allTimezones.ForEach(timeZone =>
             {
                 Console.WriteLine(timeZone.ToString());
             });
+
 
             //Find timezones sharing same offset (+5:30 is 330 mins)
             var timezonesSharingSameOffset = TimezoneHelper.OffsetToTimezones(330);
