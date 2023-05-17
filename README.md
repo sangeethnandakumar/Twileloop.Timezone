@@ -11,7 +11,7 @@
 </div>
 
 ## About
-An easy to use utility wrapper around NodaTime to easily convert timezones from any timezones, countries, offsets, short and long names etc.. while leveraging the powerfull NodaTime and globaliazation.
+An easy to use utility to easily convert timezones from any timezones, countries, offsets, short and long names etc.. while leveraging the powerfull NodaTime and globaliazation in the background.
 
 > **Note**
 > ***Starting from version v2.0+ and above, This is the official documentation. For older versions, Refer old documentation <a href="https://github.com/sangeethnandakumar/Twileloop.Timezone/blob/master/README_Old.md">
