@@ -6,7 +6,7 @@
   </a>
 
   <h2 align="center"> Twileloop.Timezone </h2>
-  <h4 align="center"> Timezones | Global | Countries </h4>
+  <h4 align="center"> Convert | Migrate | Search </h4>
 
 </div>
 
