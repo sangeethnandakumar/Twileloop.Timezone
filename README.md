@@ -10,10 +10,6 @@
 
 </div>
 
-Read full integration guide: https://packages.twileloop.com/Twileloop.Timezone
-
-More trusted packages from Twileloop: https://packages.twileloop.com
-
 ## About
 An easy to use utility to easily convert timezones from any timezones, countries, offsets, short and long names etc.. while leveraging the powerfull NodaTime and globaliazation in the background.
 
