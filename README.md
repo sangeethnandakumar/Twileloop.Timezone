@@ -5,7 +5,7 @@
     <img src="https://iili.io/HUQ2pxn.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h2 align="center"> Twileloop.Timezone </h2>
+  <h1 align="center"> Twileloop.Timezone </h1>
   <h4 align="center"> Convert | Migrate | Search </h4>
 
 </div>
