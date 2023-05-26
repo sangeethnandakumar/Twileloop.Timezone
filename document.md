@@ -36,7 +36,7 @@ dotnet add package Twileloop.Timezone
 
 ### Supported Features
 
-| Status | From | | To
+| Status | From | 🡺 | To
 | --- | --- | --- | ---
 | ✅ | UTC timezone | 🡺 | System timezone
 | ✅ | UTC timezone | 🡺 | Custom timezone
