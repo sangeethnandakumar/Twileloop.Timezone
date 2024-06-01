@@ -1,8 +1,8 @@
-title: Twileloop.Uow
-description: "Readymade Repository for LiteDB & MongoDB"
+title: Twileloop.Timezone
+description: "An easy to use utility wrapper around NodaTime to easily convert timezones from any timezones, countries, offsets, short and long names etc.. while leveraging the powerfull NodaTime and globaliazation."
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-slate
 github:
-  zip_url: https://github.com/sangeethnandakumar/Twileloop.UOW/releases
-  tar_url: https://www.nuget.org/packages/Twileloop.UOW
+  zip_url: https://github.com/sangeethnandakumar/Twileloop.Timezone/releases
+  tar_url: https://www.nuget.org/packages/Twileloop.Timezone
